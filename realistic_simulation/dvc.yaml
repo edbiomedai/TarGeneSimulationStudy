@@ -1,0 +1,10 @@
+stages:
+    run:
+        cmd: nextflow run TARGENE/targene-pipeline -entry REALISTIC_SIMULATION -r v0.11.0 -profile eddie -resume -with-trace -with-report -N s2042526@ed.ac.uk
+        deps:
+            - ../assets
+            - /exports/igmm/eddie/UK-BioBank-53116/imputed/ukb_snp_qc.txt
+            - /exports/igmm/eddie/UK-BioBank-53116/phenotypes/ukb45981.enc_ukb
+            - /exports/igmm/eddie/UK-BioBank-53116/phenotypes/encoding.ukb
+            - /exports/igmm/eddie/UK-BioBank-53116/imputed/ukb_53116_chr1.bgen
+            - /exports/igmm/eddie/UK-BioBank-53116/genotypes/ukb_53116_chr1.bed
