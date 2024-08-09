@@ -23,8 +23,16 @@ docs/site/
 # environment.
 Manifest.toml
 
-realistic_simulation/work/*
-null_simulation/work/*
+realistic_simulation/work/
+realistic_simulation/results/
+null_simulation/results/
+null_simulation/work/
 
-*.trace
-*.nextflow
+realistic_simulation/trace*
+null_simulation/trace*
+
+realistic_simulation/report*
+null_simulation/report*
+
+realistic_simulation/.nextflow*
+null_simulation/.nextflow*
