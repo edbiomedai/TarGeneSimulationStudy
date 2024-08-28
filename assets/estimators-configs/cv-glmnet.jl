@@ -19,6 +19,5 @@ default_models = TMLE.default_models(
 
 ESTIMATORS = (
   CV_wTMLE_GLMNET = TMLEE(models=default_models, weighted=true, resampling=resampling),
-  CV_TMLE_GLMNET = TMLEE(models=default_models, weighted=false, resampling=resampling),
   CV_OSE_GLMNET = OSE(models=default_models, resampling=resampling)
 )

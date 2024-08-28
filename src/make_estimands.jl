@@ -49,7 +49,7 @@ MakeATE(treatment_levels, outcome) = factorialEstimand(ATE, treatment_levels, ou
     outcome_extra_covariates=EXTRA_COVARIATES
     )
 
-MakeIATE(treatment_levels, outcome) = factorialEstimand(IATE, treatment_levels, outcome;
+MakeAIE(treatment_levels, outcome) = factorialEstimand(AIE, treatment_levels, outcome;
     confounders=CONFOUNDERS, 
     outcome_extra_covariates=EXTRA_COVARIATES
     )
@@ -60,7 +60,6 @@ function geneatlas_traits_to_variants()
         "White blood cell (leukocyte) count" => (:rs3859191, :rs9268219),
         # Sarcoidosis : rare ~ 500 cases
         "sarcoidosis" => (:rs502771, :rs148515035), 
-        "D86 Sarcoidosis" => (:rs502771, :rs148515035),
         # MS: ~ 1400 cases 
         "G35 Multiple sclerosis" => (:rs3129889, :rs62295911),
         # Other digestive diseases: ~ 13000 cases
@@ -82,7 +81,6 @@ function epistatic_traits_to_variants()
         "G35 Multiple sclerosis" => [(:rs10419224, :rs59103106)],
         # Psoriasis: https://www.sciencedirect.com/science/article/pii/S0002929723000915
         "psoriasis" => [(:rs974766, :rs10132320)],
-        "L40 Psoriasis" => [(:rs974766, :rs10132320)]
     )
 end
 
@@ -97,14 +95,14 @@ function MakeEstimands()
         end
         # Pairwise Interactions, likely to be non present
         treatment_levels = make_treatment_levels(variants)
-        push!(estimands, MakeIATE(treatment_levels, outcome))
+        push!(estimands, MakeAIE(treatment_levels, outcome))
     end
 
     # All Epistatic Interactions identified through various sources
     for (outcome, variants_tuples) ∈ epistatic_traits_to_variants()
         for variants in variants_tuples
             treatment_levels = make_treatment_levels(variants)
-            push!(estimands, MakeIATE(treatment_levels, outcome))
+            push!(estimands, MakeAIE(treatment_levels, outcome))
         end
     end
 

@@ -43,6 +43,5 @@ default_models = TMLE.default_models(
 
 ESTIMATORS = (
   wTMLE_XGBOOST = TMLEE(models=default_models, weighted=true),
-  TMLE_XGBOOST = TMLEE(models=default_models, weighted=false),
   OSE_XGBOOST = OSE(models=default_models)
 )

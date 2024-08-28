@@ -9,14 +9,6 @@ traits:
       - name: "G35 Multiple sclerosis"
         codings:
           - "G35"
-      - name: "D86 Sarcoidosis"
-        codings:
-          - "D860"
-          - "D861"
-          - "D862"
-          - "D863"
-          - "D868"
-          - "D869"
       - name: "K90-K93 Other diseases of the digestive system"
         codings:
           - "K90"
@@ -95,16 +87,6 @@ traits:
           - "H025"
           - "H026"
           - "H027"
-      - name: "L40 Psoriasis"
-        codings:
-          - "L400"
-          - "L401"
-          - "L402"
-          - "L403"
-          - "L404"
-          - "L405"
-          - "L408"
-          - "L409"
   - fields:
       - "20002"
     phenotypes:

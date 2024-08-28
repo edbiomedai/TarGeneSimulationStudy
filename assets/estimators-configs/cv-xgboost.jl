@@ -43,6 +43,5 @@ default_models = TMLE.default_models(
 
 ESTIMATORS = (
   CV_wTMLE_XGBOOST = TMLEE(models=default_models, weighted=true, resampling=resampling),
-  CV_TMLE_XGBOOST = TMLEE(models=default_models, weighted=false, resampling=resampling),
   CV_OSE_XGBOOST = OSE(models=default_models, resampling=resampling)
 )

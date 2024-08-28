@@ -8,8 +8,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3129889:
-            case: "GA"
             control: "GG"
+            case: "GA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs3129889:
@@ -25,8 +25,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3129889:
-            case: "AA"
             control: "GA"
+            case: "AA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs3129889:
@@ -44,8 +44,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs62295911:
-            case: "GA"
             control: "GG"
+            case: "GA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -61,8 +61,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs62295911:
-            case: "AA"
             control: "GA"
+            case: "AA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -77,14 +77,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs62295911:
-            case: "GA"
-            control: "GG"
           rs3129889:
-            case: "GA"
             control: "GG"
+            case: "GA"
+          rs62295911:
+            control: "GG"
+            case: "GA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -104,14 +104,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs62295911:
-            case: "GA"
-            control: "GG"
           rs3129889:
-            case: "AA"
             control: "GA"
+            case: "AA"
+          rs62295911:
+            control: "GG"
+            case: "GA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -131,14 +131,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs62295911:
-            case: "AA"
-            control: "GA"
           rs3129889:
-            case: "GA"
             control: "GG"
+            case: "GA"
+          rs62295911:
+            control: "GA"
+            case: "AA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -158,14 +158,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs62295911:
-            case: "AA"
-            control: "GA"
           rs3129889:
-            case: "AA"
             control: "GA"
+            case: "AA"
+          rs62295911:
+            control: "GA"
+            case: "AA"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs62295911:
@@ -190,8 +190,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs502771:
+            control: "TT"
             case: "TC"
-            control: "TT"
         outcome: sarcoidosis
         treatment_confounders:
           rs502771:
@@ -207,8 +207,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs502771:
-            case: "CC"
             control: "TC"
+            case: "CC"
         outcome: sarcoidosis
         treatment_confounders:
           rs502771:
@@ -226,8 +226,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs148515035:
-            case: "TA"
             control: "TT"
+            case: "TA"
         outcome: sarcoidosis
         treatment_confounders:
           rs148515035:
@@ -243,8 +243,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs148515035:
-            case: "AA"
             control: "TA"
+            case: "AA"
         outcome: sarcoidosis
         treatment_confounders:
           rs148515035:
@@ -259,68 +259,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs502771:
-            case: "TC"
-            control: "TT"
           rs148515035:
+            control: "TT"
             case: "TA"
+          rs502771:
             control: "TT"
-        outcome: sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
-            case: "CC"
-            control: "TC"
-          rs148515035:
-            case: "TA"
-            control: "TT"
-        outcome: sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
             case: "TC"
-            control: "TT"
-          rs148515035:
-            case: "AA"
-            control: "TA"
         outcome: sarcoidosis
         treatment_confounders:
           rs502771:
@@ -340,14 +286,68 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs502771:
-            case: "CC"
-            control: "TC"
           rs148515035:
-            case: "AA"
             control: "TA"
+            case: "AA"
+          rs502771:
+            control: "TT"
+            case: "TC"
+        outcome: sarcoidosis
+        treatment_confounders:
+          rs502771:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs148515035:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs148515035:
+            control: "TT"
+            case: "TA"
+          rs502771:
+            control: "TC"
+            case: "CC"
+        outcome: sarcoidosis
+        treatment_confounders:
+          rs502771:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs148515035:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs148515035:
+            control: "TA"
+            case: "AA"
+          rs502771:
+            control: "TC"
+            case: "CC"
         outcome: sarcoidosis
         treatment_confounders:
           rs502771:
@@ -372,8 +372,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3129716:
-            case: "TC"
             control: "TT"
+            case: "TC"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -389,8 +389,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3129716:
-            case: "CC"
             control: "TC"
+            case: "CC"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -408,8 +408,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs72926466:
+            control: "GG"
             case: "GC"
-            control: "GG"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs72926466:
@@ -425,8 +425,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs72926466:
-            case: "CC"
             control: "GC"
+            case: "CC"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs72926466:
@@ -441,14 +441,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3129716:
-            case: "TC"
             control: "TT"
+            case: "TC"
           rs72926466:
+            control: "GG"
             case: "GC"
-            control: "GG"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -468,14 +468,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3129716:
-            case: "CC"
             control: "TC"
+            case: "CC"
           rs72926466:
+            control: "GG"
             case: "GC"
-            control: "GG"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -495,14 +495,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3129716:
-            case: "TC"
             control: "TT"
+            case: "TC"
           rs72926466:
-            case: "CC"
             control: "GC"
+            case: "CC"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -522,14 +522,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3129716:
-            case: "CC"
             control: "TC"
-          rs72926466:
             case: "CC"
+          rs72926466:
             control: "GC"
+            case: "CC"
         outcome: K90-K93 Other diseases of the digestive system
         treatment_confounders:
           rs3129716:
@@ -553,191 +553,9 @@ estimands:
           - Genetic-Sex
         type: "ATE"
         treatment_values:
-          rs502771:
-            case: "TC"
-            control: "TT"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "ATE"
-        treatment_values:
-          rs502771:
-            case: "CC"
-            control: "TC"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "ATE"
-        treatment_values:
-          rs148515035:
-            case: "TA"
-            control: "TT"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "ATE"
-        treatment_values:
-          rs148515035:
-            case: "AA"
-            control: "TA"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
-            case: "TC"
-            control: "TT"
-          rs148515035:
-            case: "TA"
-            control: "TT"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
-            case: "CC"
-            control: "TC"
-          rs148515035:
-            case: "TA"
-            control: "TT"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
-            case: "TC"
-            control: "TT"
-          rs148515035:
-            case: "AA"
-            control: "TA"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs502771:
-            case: "CC"
-            control: "TC"
-          rs148515035:
-            case: "AA"
-            control: "TA"
-        outcome: D86 Sarcoidosis
-        treatment_confounders:
-          rs502771:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs148515035:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "ATE"
-        treatment_values:
           rs4506565:
+            control: "AA"
             case: "AT"
-            control: "AA"
         outcome: type 2 diabetes
         treatment_confounders:
           rs4506565:
@@ -753,8 +571,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs4506565:
-            case: "TT"
             control: "AT"
+            case: "TT"
         outcome: type 2 diabetes
         treatment_confounders:
           rs4506565:
@@ -772,8 +590,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs117737810:
-            case: "TC"
             control: "TT"
+            case: "TC"
         outcome: type 2 diabetes
         treatment_confounders:
           rs117737810:
@@ -789,8 +607,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs117737810:
-            case: "CC"
             control: "TC"
+            case: "CC"
         outcome: type 2 diabetes
         treatment_confounders:
           rs117737810:
@@ -805,68 +623,41 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
+          rs117737810:
+            control: "TT"
+            case: "TC"
           rs4506565:
+            control: "AA"
             case: "AT"
+        outcome: type 2 diabetes
+        treatment_confounders:
+          rs4506565:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs117737810:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs117737810:
+            control: "TC"
+            case: "CC"
+          rs4506565:
             control: "AA"
-          rs117737810:
-            case: "TC"
-            control: "TT"
-        outcome: type 2 diabetes
-        treatment_confounders:
-          rs4506565:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs117737810:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs4506565:
-            case: "TT"
-            control: "AT"
-          rs117737810:
-            case: "TC"
-            control: "TT"
-        outcome: type 2 diabetes
-        treatment_confounders:
-          rs4506565:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs117737810:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs4506565:
             case: "AT"
-            control: "AA"
-          rs117737810:
-            case: "CC"
-            control: "TC"
         outcome: type 2 diabetes
         treatment_confounders:
           rs4506565:
@@ -886,14 +677,41 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
+          rs117737810:
+            control: "TT"
+            case: "TC"
           rs4506565:
-            case: "TT"
             control: "AT"
+            case: "TT"
+        outcome: type 2 diabetes
+        treatment_confounders:
+          rs4506565:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
           rs117737810:
-            case: "CC"
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs117737810:
             control: "TC"
+            case: "CC"
+          rs4506565:
+            control: "AT"
+            case: "TT"
         outcome: type 2 diabetes
         treatment_confounders:
           rs4506565:
@@ -918,8 +736,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs9940128:
-            case: "GA"
             control: "GG"
+            case: "GA"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs9940128:
@@ -935,8 +753,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs9940128:
-            case: "AA"
             control: "GA"
+            case: "AA"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs9940128:
@@ -954,8 +772,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs62107261:
-            case: "TC"
             control: "TT"
+            case: "TC"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs62107261:
@@ -971,8 +789,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs62107261:
-            case: "CC"
             control: "TC"
+            case: "CC"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs62107261:
@@ -987,68 +805,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs62107261:
-            case: "TC"
             control: "TT"
-          rs9940128:
-            case: "GA"
-            control: "GG"
-        outcome: Body mass index (BMI)
-        treatment_confounders:
-          rs62107261:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs9940128:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs62107261:
             case: "TC"
-            control: "TT"
           rs9940128:
-            case: "AA"
-            control: "GA"
-        outcome: Body mass index (BMI)
-        treatment_confounders:
-          rs62107261:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs9940128:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs62107261:
-            case: "CC"
-            control: "TC"
-          rs9940128:
-            case: "GA"
             control: "GG"
+            case: "GA"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs62107261:
@@ -1068,14 +832,68 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs62107261:
-            case: "CC"
             control: "TC"
+            case: "CC"
           rs9940128:
-            case: "AA"
+            control: "GG"
+            case: "GA"
+        outcome: Body mass index (BMI)
+        treatment_confounders:
+          rs62107261:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs9940128:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs62107261:
+            control: "TT"
+            case: "TC"
+          rs9940128:
             control: "GA"
+            case: "AA"
+        outcome: Body mass index (BMI)
+        treatment_confounders:
+          rs62107261:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs9940128:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs62107261:
+            control: "TC"
+            case: "CC"
+          rs9940128:
+            control: "GA"
+            case: "AA"
         outcome: Body mass index (BMI)
         treatment_confounders:
           rs62107261:
@@ -1100,8 +918,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3859191:
-            case: "GA"
             control: "GG"
+            case: "GA"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1117,8 +935,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs3859191:
-            case: "AA"
             control: "GA"
+            case: "AA"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1136,8 +954,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs9268219:
+            control: "TT"
             case: "TG"
-            control: "TT"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs9268219:
@@ -1153,8 +971,8 @@ estimands:
         type: "ATE"
         treatment_values:
           rs9268219:
-            case: "GG"
             control: "TG"
+            case: "GG"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs9268219:
@@ -1169,14 +987,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3859191:
-            case: "GA"
             control: "GG"
+            case: "GA"
           rs9268219:
+            control: "TT"
             case: "TG"
-            control: "TT"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1196,14 +1014,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3859191:
-            case: "AA"
             control: "GA"
+            case: "AA"
           rs9268219:
+            control: "TT"
             case: "TG"
-            control: "TT"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1223,14 +1041,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3859191:
-            case: "GA"
             control: "GG"
+            case: "GA"
           rs9268219:
-            case: "GG"
             control: "TG"
+            case: "GG"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1250,14 +1068,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs3859191:
-            case: "AA"
             control: "GA"
+            case: "AA"
           rs9268219:
-            case: "GG"
             control: "TG"
+            case: "GG"
         outcome: White blood cell (leukocyte) count
         treatment_confounders:
           rs3859191:
@@ -1279,14 +1097,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs10419224:
-            case: "CT"
             control: "CC"
+            case: "CT"
           rs59103106:
-            case: "AC"
             control: "AA"
+            case: "AC"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs10419224:
@@ -1306,14 +1124,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs10419224:
-            case: "TT"
             control: "CT"
+            case: "TT"
           rs59103106:
-            case: "AC"
             control: "AA"
+            case: "AC"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs10419224:
@@ -1333,14 +1151,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs10419224:
-            case: "CT"
             control: "CC"
+            case: "CT"
           rs59103106:
-            case: "CC"
             control: "AC"
+            case: "CC"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs10419224:
@@ -1360,14 +1178,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs10419224:
-            case: "TT"
             control: "CT"
+            case: "TT"
           rs59103106:
-            case: "CC"
             control: "AC"
+            case: "CC"
         outcome: G35 Multiple sclerosis
         treatment_confounders:
           rs10419224:
@@ -1389,14 +1207,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "AC"
-            control: "AA"
           rs10132320:
-            case: "AG"
             control: "AA"
+            case: "AG"
+          rs974766:
+            control: "AA"
+            case: "AC"
         outcome: psoriasis
         treatment_confounders:
           rs974766:
@@ -1416,14 +1234,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "CC"
-            control: "AC"
           rs10132320:
-            case: "AG"
+            control: "AG"
+            case: "GG"
+          rs974766:
             control: "AA"
+            case: "AC"
         outcome: psoriasis
         treatment_confounders:
           rs974766:
@@ -1443,14 +1261,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "AC"
-            control: "AA"
           rs10132320:
-            case: "GG"
-            control: "AG"
+            control: "AA"
+            case: "AG"
+          rs974766:
+            control: "AC"
+            case: "CC"
         outcome: psoriasis
         treatment_confounders:
           rs974766:
@@ -1470,14 +1288,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "CC"
-            control: "AC"
           rs10132320:
-            case: "GG"
             control: "AG"
+            case: "GG"
+          rs974766:
+            control: "AC"
+            case: "CC"
         outcome: psoriasis
         treatment_confounders:
           rs974766:
@@ -1499,24 +1317,1186 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "AC"
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CC"
+            case: "CG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GG"
+            case: "GT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TT"
+            case: "TC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1732170:
+            control: "TC"
+            case: "CC"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs456998:
+            control: "GT"
+            case: "TT"
+          rs8111699:
+            control: "CG"
+            case: "GG"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs1732170:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs456998:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs8111699:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+  - type: "JointEstimand"
+    args:
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CC"
+            case: "CT"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs6456121:
+            control: "CC"
+            case: "CT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CT"
+            case: "TT"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs6456121:
+            control: "CC"
+            case: "CT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CC"
+            case: "CT"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs6456121:
+            control: "CC"
+            case: "CT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CT"
+            case: "TT"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs6456121:
+            control: "CC"
+            case: "CT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CC"
+            case: "CT"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs6456121:
+            control: "CT"
+            case: "TT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CT"
+            case: "TT"
+          rs356219:
+            control: "GG"
+            case: "GA"
+          rs6456121:
+            control: "CT"
+            case: "TT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CC"
+            case: "CT"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs6456121:
+            control: "CT"
+            case: "TT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs11868112:
+            control: "CT"
+            case: "TT"
+          rs356219:
+            control: "GA"
+            case: "AA"
+          rs6456121:
+            control: "CT"
+            case: "TT"
+        outcome: G20 Parkinson's disease
+        treatment_confounders:
+          rs6456121:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs356219:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs11868112:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+  - type: "JointEstimand"
+    args:
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1805007:
+            control: "CC"
+            case: "CT"
+          rs6088372:
+            control: "CC"
+            case: "CT"
+        outcome: Skin colour
+        treatment_confounders:
+          rs1805007:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs6088372:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1805007:
+            control: "CT"
+            case: "TT"
+          rs6088372:
+            control: "CC"
+            case: "CT"
+        outcome: Skin colour
+        treatment_confounders:
+          rs1805007:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs6088372:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1805007:
+            control: "CC"
+            case: "CT"
+          rs6088372:
+            control: "CT"
+            case: "TT"
+        outcome: Skin colour
+        treatment_confounders:
+          rs1805007:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs6088372:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1805007:
+            control: "CT"
+            case: "TT"
+          rs6088372:
+            control: "CT"
+            case: "TT"
+        outcome: Skin colour
+        treatment_confounders:
+          rs1805007:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+          rs6088372:
+            - PC1
+            - PC2
+            - PC3
+            - PC4
+            - PC5
+            - PC6
+  - type: "JointEstimand"
+    args:
+      - outcome_extra_covariates:
+          - Age-Assessment
+          - Genetic-Sex
+        type: "AIE"
+        treatment_values:
+          rs1805005:
+            control: "GG"
+            case: "GT"
+          rs6059655:
             control: "AA"
-          rs10132320:
             case: "AG"
-            control: "AA"
-        outcome: L40 Psoriasis
+        outcome: Skin colour
         treatment_confounders:
-          rs974766:
+          rs6059655:
             - PC1
             - PC2
             - PC3
             - PC4
             - PC5
             - PC6
-          rs10132320:
+          rs1805005:
             - PC1
             - PC2
             - PC3
@@ -1526,24 +2506,24 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "CC"
-            control: "AC"
-          rs10132320:
+          rs1805005:
+            control: "GT"
+            case: "TT"
+          rs6059655:
+            control: "AA"
             case: "AG"
-            control: "AA"
-        outcome: L40 Psoriasis
+        outcome: Skin colour
         treatment_confounders:
-          rs974766:
+          rs6059655:
             - PC1
             - PC2
             - PC3
             - PC4
             - PC5
             - PC6
-          rs10132320:
+          rs1805005:
             - PC1
             - PC2
             - PC3
@@ -1553,24 +2533,24 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "AC"
-            control: "AA"
-          rs10132320:
-            case: "GG"
+          rs1805005:
+            control: "GG"
+            case: "GT"
+          rs6059655:
             control: "AG"
-        outcome: L40 Psoriasis
+            case: "GG"
+        outcome: Skin colour
         treatment_confounders:
-          rs974766:
+          rs6059655:
             - PC1
             - PC2
             - PC3
             - PC4
             - PC5
             - PC6
-          rs10132320:
+          rs1805005:
             - PC1
             - PC2
             - PC3
@@ -1580,1286 +2560,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
-          rs974766:
-            case: "CC"
-            control: "AC"
-          rs10132320:
-            case: "GG"
+          rs1805005:
+            control: "GT"
+            case: "TT"
+          rs6059655:
             control: "AG"
-        outcome: L40 Psoriasis
-        treatment_confounders:
-          rs974766:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs10132320:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "CG"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
             case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "GT"
-            control: "GG"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "TC"
-            control: "TT"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs1732170:
-            case: "CC"
-            control: "TC"
-          rs456998:
-            case: "TT"
-            control: "GT"
-          rs8111699:
-            case: "GG"
-            control: "CG"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1732170:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs456998:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs8111699:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "CT"
-            control: "CC"
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs11868112:
-            case: "CT"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "CT"
-            control: "CC"
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs11868112:
-            case: "TT"
-            control: "CT"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "TT"
-            control: "CT"
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs11868112:
-            case: "CT"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "TT"
-            control: "CT"
-          rs356219:
-            case: "GA"
-            control: "GG"
-          rs11868112:
-            case: "TT"
-            control: "CT"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "CT"
-            control: "CC"
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs11868112:
-            case: "CT"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "CT"
-            control: "CC"
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs11868112:
-            case: "TT"
-            control: "CT"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "TT"
-            control: "CT"
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs11868112:
-            case: "CT"
-            control: "CC"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6456121:
-            case: "TT"
-            control: "CT"
-          rs356219:
-            case: "AA"
-            control: "GA"
-          rs11868112:
-            case: "TT"
-            control: "CT"
-        outcome: G20 Parkinson's disease
-        treatment_confounders:
-          rs6456121:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs356219:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs11868112:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs1805007:
-            case: "CT"
-            control: "CC"
-          rs6088372:
-            case: "CT"
-            control: "CC"
-        outcome: Skin colour
-        treatment_confounders:
-          rs1805007:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs6088372:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs1805007:
-            case: "TT"
-            control: "CT"
-          rs6088372:
-            case: "CT"
-            control: "CC"
-        outcome: Skin colour
-        treatment_confounders:
-          rs1805007:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs6088372:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs1805007:
-            case: "CT"
-            control: "CC"
-          rs6088372:
-            case: "TT"
-            control: "CT"
-        outcome: Skin colour
-        treatment_confounders:
-          rs1805007:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs6088372:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs1805007:
-            case: "TT"
-            control: "CT"
-          rs6088372:
-            case: "TT"
-            control: "CT"
-        outcome: Skin colour
-        treatment_confounders:
-          rs1805007:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs6088372:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-  - type: "JointEstimand"
-    args:
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6059655:
-            case: "AG"
-            control: "AA"
-          rs1805005:
-            case: "GT"
-            control: "GG"
-        outcome: Skin colour
-        treatment_confounders:
-          rs6059655:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1805005:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6059655:
-            case: "AG"
-            control: "AA"
-          rs1805005:
-            case: "TT"
-            control: "GT"
-        outcome: Skin colour
-        treatment_confounders:
-          rs6059655:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1805005:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6059655:
-            case: "GG"
-            control: "AG"
-          rs1805005:
-            case: "GT"
-            control: "GG"
-        outcome: Skin colour
-        treatment_confounders:
-          rs6059655:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-          rs1805005:
-            - PC1
-            - PC2
-            - PC3
-            - PC4
-            - PC5
-            - PC6
-      - outcome_extra_covariates:
-          - Age-Assessment
-          - Genetic-Sex
-        type: "IATE"
-        treatment_values:
-          rs6059655:
-            case: "GG"
-            control: "AG"
-          rs1805005:
-            case: "TT"
-            control: "GT"
         outcome: Skin colour
         treatment_confounders:
           rs6059655:
@@ -2881,14 +2589,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs1129038:
-            case: "CT"
             control: "CC"
+            case: "CT"
           rs1805008:
-            case: "CT"
             control: "CC"
+            case: "CT"
         outcome: Skin colour
         treatment_confounders:
           rs1129038:
@@ -2908,14 +2616,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs1129038:
-            case: "CT"
-            control: "CC"
-          rs1805008:
-            case: "TT"
             control: "CT"
+            case: "TT"
+          rs1805008:
+            control: "CC"
+            case: "CT"
         outcome: Skin colour
         treatment_confounders:
           rs1129038:
@@ -2935,14 +2643,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs1129038:
-            case: "TT"
-            control: "CT"
-          rs1805008:
-            case: "CT"
             control: "CC"
+            case: "CT"
+          rs1805008:
+            control: "CT"
+            case: "TT"
         outcome: Skin colour
         treatment_confounders:
           rs1129038:
@@ -2962,14 +2670,14 @@ estimands:
       - outcome_extra_covariates:
           - Age-Assessment
           - Genetic-Sex
-        type: "IATE"
+        type: "AIE"
         treatment_values:
           rs1129038:
-            case: "TT"
             control: "CT"
+            case: "TT"
           rs1805008:
-            case: "TT"
             control: "CT"
+            case: "TT"
         outcome: Skin colour
         treatment_confounders:
           rs1129038:
