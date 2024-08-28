@@ -1,6 +1,6 @@
 stages:
     run:
-        cmd: nextflow run https://github.com/TARGENE/targene-pipeline -entry NULL_SIMULATION -r 771335c4f9e2292c4e8748db6216d9c61b8159f8 -profile eddie -resume -c ../assets/simulation.config -with-trace -with-report -N s2042526@ed.ac.uk
+        cmd: nextflow run https://github.com/TARGENE/targene-pipeline -entry NULL_SIMULATION -r 3ba6a5a6c8760ddfa99cc22cc82b4c9237c7427a -profile eddie -resume -c ../assets/simulation.config -with-trace -with-report -N s2042526@ed.ac.uk
         deps:
             - ../assets
             - /exports/igmm/eddie/UK-BioBank-53116/imputed/ukb_snp_qc.txt
