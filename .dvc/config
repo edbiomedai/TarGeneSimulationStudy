@@ -1,0 +1,4 @@
+[core]
+    remote = origin
+['remote "origin"']
+    url = /gpfs/igmmfs01/datastore/ponting-lab/olivier/remotes/targene-simulations

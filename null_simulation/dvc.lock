@@ -1,0 +1,41 @@
+schema: '2.0'
+stages:
+  run:
+    cmd: nextflow run https://github.com/TARGENE/targene-pipeline -entry NULL_SIMULATION
+      -r 3ba6a5a6c8760ddfa99cc22cc82b4c9237c7427a -profile eddie -resume -c ../assets/simulation.config
+      -with-trace -with-report -N s2042526@ed.ac.uk
+    deps:
+    - path: ../assets
+      hash: md5
+      md5: 43ad28c5c84cdf6eb07c3aee3e49647c.dir
+      size: 69165
+      nfiles: 8
+    - path: /exports/igmm/eddie/UK-BioBank-53116/genotypes/ukb_53116_chr1.bed
+      hash: md5
+      md5: b46d4fefc8e5ea69de19f8e47de42b5d
+      size: 7751445268
+    - path: /exports/igmm/eddie/UK-BioBank-53116/imputed/ukb_53116_chr1.bgen
+      hash: md5
+      md5: a927fc2e77171d1df59480d647721bdb
+      size: 194508985673
+    - path: /exports/igmm/eddie/UK-BioBank-53116/imputed/ukb_snp_qc.txt
+      hash: md5
+      md5: 466d1e77a834defedabfc24cb520d967
+      size: 371289758
+    - path: /exports/igmm/eddie/UK-BioBank-53116/phenotypes/encoding.ukb
+      hash: md5
+      md5: 46893107a1ee2f6c11c1084614950e21
+      size: 12840633
+    - path: /exports/igmm/eddie/UK-BioBank-53116/phenotypes/ukb45981.enc_ukb
+      hash: md5
+      md5: eceb71eb8e264dc96326a5b0a4eb5b81
+      size: 16731688880
+    outs:
+    - path: results/datasets/all_genotypes.data.arrow
+      hash: md5
+      md5: a56c9f7b4c1dbedb59121d568f4ebbc9
+      size: 134660130
+    - path: results/null_simulation_results.hdf5
+      hash: md5
+      md5: 7dcf13de28bd7aeceecde4d662de5299
+      size: 1387207244
