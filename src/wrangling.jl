@@ -116,5 +116,23 @@ function get_constrained_estimands_coverages(results, dataset)
     mean_coverages = vcat(mean_coverages...)
     add_estimator_info_cols!(mean_coverages)
     mean_coverages.ESTIMANDS_RATIO = mean_coverages.N_UNIQUE_ESTIMANDS ./ maximum(mean_coverages.N_UNIQUE_ESTIMANDS)
+    mean_coverages.CONFINT = [confint(OneSampleTTest(x, x*(1-x), 500)) for x in mean_coverages.MEAN_COVERAGE_mean]
     return mean_coverages
+end
+
+function load_density_results(density_estimates_prefix)
+    density_results = DataFrame()
+    for (distribution_id, file) ∈ enumerate(TargeneCore.files_matching_prefix(density_estimates_prefix))
+        jldopen(file) do io
+            outcome = string(io["outcome"])
+            losses = io["metrics"]
+            estimators = [string(typeof(x)) for x in io["estimators"]]
+            @assert estimators[1] == "SieveNeuralNetworkEstimator"
+            relative_train_improvement = -100(losses[1].train_loss - losses[2].train_loss) / losses[2].train_loss
+            relative_test_improvement = -100(losses[1].test_loss - losses[2].test_loss) / losses[2].test_loss
+            push!(density_results, (OUTCOME_ID=distribution_id, OUTCOME=outcome, RELATIVE_IMPROVEMENT=relative_train_improvement, TYPE=1))
+            push!(density_results, (OUTCOME_ID=distribution_id, OUTCOME=outcome, RELATIVE_IMPROVEMENT=relative_test_improvement, TYPE=2))
+        end
+    end
+    return density_results
 end

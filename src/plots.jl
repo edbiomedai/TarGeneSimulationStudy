@@ -1,7 +1,8 @@
-function colors_and_color_map(models)
-    color_map = OrderedDict(model => index for (index, model) ∈ enumerate(sort(unique(models))))
-    colors = Makie.Colors.distinguishable_colors(maximum(values(color_map)), [Makie.RGB(1,1,1), Makie.RGB(0,0,0)], dropseed=true)
-    return colors, color_map
+function get_colormap()
+    return Dict(
+        "GLMNET" => :blue,
+        "XGBOOST" => :red
+        )
 end
 
 function add_labels(fig)
@@ -12,7 +13,7 @@ function add_labels(fig)
 end
 
 function plot_coverage_per_estimator(results)
-    colors, color_map = colors_and_color_map(results.MODEL)
+    color_map = get_colormap()
     sample_sizes = sort(unique(results.SAMPLE_SIZE))
     yticks = (1:size(sample_sizes, 1), string.(sample_sizes))
     fig = Figure(size=(1000, 800))
@@ -29,7 +30,7 @@ function plot_coverage_per_estimator(results)
             for (ss_id, (ss_key, ss_group)) ∈ enumerate(pairs(groupby(estimator_type_group, :SAMPLE_SIZE, sort=true)))
                 for (model_key, model_group) ∈ pairs(groupby(ss_group, :MODEL))
                     hist!(ax, model_group.MEAN_COVERAGE, 
-                        color=(colors[color_map[model_key.MODEL]], 0.5), 
+                        color=(color_map[model_key.MODEL], 0.5), 
                         offset=ss_id, 
                         normalization=:probability,
                         label=model_key.MODEL
@@ -55,8 +56,9 @@ end
 
 function plot_coverage_by_positivity_across_estimators(constrained_estimands_coverages; sample_size=500_000)
     constrained_estimands_coverages_ss = filter(:SAMPLE_SIZE => ==(sample_size), constrained_estimands_coverages)
+    ymin = minimum(constrained_estimands_coverages.MEAN_COVERAGE_mean)
     fig = Figure(size=(1000, 800))
-    colors, color_map = colors_and_color_map(constrained_estimands_coverages.MODEL)
+    color_map = get_colormap()
     for (cv_id, (cv_key, cv_group)) ∈ enumerate(pairs(groupby(constrained_estimands_coverages_ss, :CV_INFO, sort=true)))
         for (estimator_type_id, (estimator_type_key, estimator_type_group)) ∈ enumerate(pairs(groupby(cv_group, :ESTIMATOR_TYPE, sort=true)))
             ylabel = cv_id == 1 ? "Coverage" : ""
@@ -64,7 +66,8 @@ function plot_coverage_by_positivity_across_estimators(constrained_estimands_cov
             ax = Axis(fig[estimator_type_id, cv_id], 
                 titlesize=20,
                 xlabel=xlabel, 
-                ylabel=ylabel
+                ylabel=ylabel,
+                limits=(nothing, (ymin, nothing))
             )
             hlines!(ax, 0.95, color=:black)
             model_groups = pairs(groupby(estimator_type_group, :MODEL, sort=true))
@@ -72,8 +75,14 @@ function plot_coverage_by_positivity_across_estimators(constrained_estimands_cov
                 scatterlines!(ax,
                     model_group.POSITIVITY_CONSTRAINT,
                     model_group.MEAN_COVERAGE_mean,
-                    color=(colors[color_map[model_key.MODEL]], 0.5),
+                    color=(color_map[model_key.MODEL], 1.),
                     label=model_key.MODEL
+                )
+                band!(ax, 
+                    model_group.POSITIVITY_CONSTRAINT, 
+                    first.(model_group.CONFINT), 
+                    last.(model_group.CONFINT),
+                    color=(color_map[model_key.MODEL], 0.2),
                 )
             end
             ylabel = cv_id == 2 ? "Estimands %" : ""
@@ -98,5 +107,35 @@ function plot_coverage_by_positivity_across_estimators(constrained_estimands_cov
         unique=true
         )
     add_labels(fig)
+    return fig
+end
+
+function plot_loss_relative_difference(density_estimates_prefix)
+    # Retrieve Results
+    density_results = load_density_results(density_estimates_prefix)
+    sort!(density_results, order(:RELATIVE_IMPROVEMENT, by=x->abs(x)))
+    xs_dict = Dict(outcome => index for (index, outcome) ∈ enumerate(unique(density_results.OUTCOME)))
+    density_results.OUTCOME_ID = [xs_dict[outcome] for outcome ∈ density_results.OUTCOME]
+    # Plot
+    colors = Makie.wong_colors()
+    fig = Figure(size=(1000, 800))
+    xs_to_labels = sort(unique(DataFrames.select(density_results, [:OUTCOME_ID, :OUTCOME])), :OUTCOME_ID)
+    ax = Axis(fig[1, 1], 
+        title="Relative Loss Improvement of SNNE over GLM", 
+        ylabel="Density", 
+        xlabel="%", 
+        yticks=(xs_to_labels.OUTCOME_ID, xs_to_labels.OUTCOME)
+    )
+    barplot!(ax,
+        density_results.OUTCOME_ID, 
+        density_results.RELATIVE_IMPROVEMENT,
+        dodge = density_results.TYPE,
+        color = colors[density_results.TYPE],
+        direction=:x,
+    )
+    vlines!(0, color=:black)
+    elements = [PolyElement(polycolor = colors[1]), PolyElement(polycolor = colors[2])]
+    Legend(fig[2,:], elements, ["Train", "Validation"], "Set",
+        orientation = :horizontal, tellwidth = false, tellheight = true)
     return fig
 end
