@@ -13,6 +13,9 @@ include("src/wrangling.jl")
 include("src/plots.jl")
 
 function main()
+    fontsize_theme = Theme(fontsize = 24)
+    set_theme!(fontsize_theme)
+    xcrop = 0.011
     # Null Simulation
     ## Files
     null_dataset_file = joinpath("null_simulation", "results", "datasets", "all_genotypes.data.arrow")
@@ -27,9 +30,12 @@ function main()
     null_constrained_estimands_coverages = get_constrained_estimands_coverages(null_results, null_dataset)
     fig = plot_coverage_by_positivity_across_estimators(null_constrained_estimands_coverages; sample_size=500_000)
     save("coverage_by_positivity_null_500000.png", fig)
+    fig = plot_coverage_by_positivity_across_estimators(null_constrained_estimands_coverages; sample_size=500_000, xcrop=xcrop)
+    save("coverage_by_positivity_null_500000_cropped.png", fig)
     fig = plot_coverage_by_positivity_across_estimators(null_constrained_estimands_coverages; sample_size=50_000)
     save("coverage_by_positivity_null_50000.png", fig)
-
+    fig = plot_coverage_by_positivity_across_estimators(null_constrained_estimands_coverages; sample_size=50_000, xcrop=xcrop)
+    save("coverage_by_positivity_null_50000_cropped.png", fig)
     # Realistic Simulation
     ## Files
     realistic_dataset_file = joinpath("realistic_simulation", "results", "realistic_simulation_inputs", "ga_sim_input.data.arrow")
@@ -42,11 +48,23 @@ function main()
     fig = plot_loss_relative_difference(density_estimates_prefix)
     save("density_estimates.png", fig)
     add_estimator_info_cols!(realistic_results)
+    add_power_col!(realistic_results)
+    add_estimand_type_col!(realistic_results)
+    fig = power_plot(realistic_results; estimator_type = "wTMLE")
+    save("power_wtmle.png", fig)
+    fig = power_plot(realistic_results; estimator_type = "OSE")
+    save("power_ose.png", fig)
     fig = plot_coverage_per_estimator(realistic_results)
     save("coverage_per_estimator_realistic.png", fig)
     realistic_constrained_estimands_coverages = get_constrained_estimands_coverages(realistic_results, realistic_dataset)
     fig = plot_coverage_by_positivity_across_estimators(realistic_constrained_estimands_coverages; sample_size=500_000)
     save("coverage_by_positivity_realistic_500000.png", fig)
+    fig = plot_coverage_by_positivity_across_estimators(realistic_constrained_estimands_coverages; sample_size=500_000, xcrop=xcrop)
+    save("coverage_by_positivity_realistic_500000_cropped.png", fig)
     fig = plot_coverage_by_positivity_across_estimators(realistic_constrained_estimands_coverages; sample_size=50_000)
     save("coverage_by_positivity_realistic_50000.png", fig)
+    fig = plot_coverage_by_positivity_across_estimators(realistic_constrained_estimands_coverages; sample_size=50_000, xcrop=xcrop)
+    save("coverage_by_positivity_realistic_50000_cropped.png", fig)
 end
+
+main()

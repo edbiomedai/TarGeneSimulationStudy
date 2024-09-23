@@ -1,7 +1,21 @@
 
+add_power_col!(results) = 
+results.POWER = [1 - Simulations.mean_coverage(Ψ̂s, zero(TMLE.estimate(first(Ψ̂s)))) for Ψ̂s in results.ESTIMATES]
+
+add_estimand_type_col!(results) =     
+    results.ESTIMAND_TYPE = [infer_estimand_type(Ψ) for Ψ ∈ results.ESTIMAND]
+
 add_model!(results) = results.MODEL = [split(estimator, "_")[end] for estimator in string.(results.ESTIMATOR)]
 
 add_cv_info!(results) = results.CV_INFO = [startswith(estimator, "CV") ? "CV" : "Canonical" for estimator in string.(results.ESTIMATOR)]
+
+infer_estimand_type(Ψ) = typeof(Ψ)
+
+function infer_estimand_type(Ψ::TMLE.JointEstimand)
+    infered_type = infer_estimand_type(first(Ψ.args))
+    @assert all(infer_estimand_type(arg) == infered_type for arg ∈ Ψ.args)
+    return infered_type
+end
 
 add_estimator_type!(results) = results.ESTIMATOR_TYPE = [occursin("OSE", estimator) ? "OSE" : "wTMLE" for estimator in string.(results.ESTIMATOR)]
 
